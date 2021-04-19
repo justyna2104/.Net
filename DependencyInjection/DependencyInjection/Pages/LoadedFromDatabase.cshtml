@@ -1,0 +1,22 @@
+﻿@page
+@model DependencyInjection.Pages.LoadedFromDatabaseModel
+@{
+}
+
+
+<div class="card-columns">
+    @foreach (var item in Model.Products)
+    {
+        <div class="card">
+            <div class="card-img" style="background-image: url('@Html.DisplayFor(modelItem => item.Image)');">
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                <h6 class="card-text">Maker: @Html.DisplayFor(modelItem => item.Maker)</h6>
+                <h6 class="card-text">Description: @Html.DisplayFor(modelItem => item.Description)</h6>
+                <h6 class="card-link">Click <a href="@Html.DisplayFor(modelItem => item.Url)">here</a></h6>
+            </div>
+        </div>
+    }
+</div>
