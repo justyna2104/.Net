@@ -17,7 +17,8 @@ namespace Middleware
 
         public Task Invoke(HttpContext context)
         {
-            var userAgent = context.Request.Headers["User-Agent"][0].ToString();
+            
+            var userAgent = context.Request.Headers["User-Agent"].ToString();
 
             if (userAgent.Contains("Edge") || userAgent.Contains("Edg/") || userAgent.Contains("Trident/")) // Edge, EdgeChromium i IE
             {
